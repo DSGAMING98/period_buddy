@@ -82,11 +82,6 @@ No APIs. No cloud databases. No subscriptions.
 
 ## 📂 Project Structure
 
-ChatGPT said:
-
-BET 😤🔥
-Here’s your clean, copy-pastable README.md — polished, dev-ready, no cringe, no filler. Just drop this into your repo root as README.md and you’re GOATED.
-
 # 🩸 Period Buddy — v1.0 Offline Edition
 
 **Period Buddy** is a fully **offline, privacy-first period tracking & support app** built with **Streamlit**.  
