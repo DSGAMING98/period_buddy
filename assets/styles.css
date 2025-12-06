@@ -1,0 +1,362 @@
+/* ROOT THEME  */
+:root {
+    --pb-bg-1: #060712;
+    --pb-bg-2: #111322;
+    --pb-accent-1: #ff4b8a;
+    --pb-accent-2: #ffb3d1;
+    --pb-accent-3: #7cf5ff;
+    --pb-text-main: #f9f5ff;
+    --pb-text-soft: #c6bed8;
+    --pb-card-bg: rgba(16, 18, 35, 0.92);
+    --pb-border-soft: rgba(255, 255, 255, 0.08);
+    --pb-shadow-soft: 0 22px 45px rgba(0, 0, 0, 0.65);
+    --pb-radius-xl: 22px;
+    --pb-radius-lg: 16px;
+    --pb-radius-pill: 999px;
+    --pb-transition: 180ms ease-out;
+}
+
+/*  APP BACKGROUND  */
+
+html, body {
+    background: radial-gradient(circle at top left, #2a163b 0, #060712 55%) fixed;
+    color: var(--pb-text-main);
+}
+
+[data-testid="stAppViewContainer"] > .main {
+    background:
+      radial-gradient(circle at 0% 0%, rgba(255, 75, 138, 0.16), transparent 55%),
+      radial-gradient(circle at 100% 0%, rgba(124, 245, 255, 0.16), transparent 55%),
+      linear-gradient(145deg, var(--pb-bg-1), var(--pb-bg-2));
+    color: var(--pb-text-main);
+    padding-top: 1.2rem;
+}
+
+/* Hide default header white bar */
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+/* SCROLLBAR  */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--pb-accent-1), var(--pb-accent-3));
+    border-radius: 999px;
+}
+
+/*  SIDEBAR  */
+
+[data-testid="stSidebar"] {
+    background: radial-gradient(circle at top, #29122f 0, #070714 60%);
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-testid="stSidebar"] * {
+    color: var(--pb-text-main) !important;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Roboto", sans-serif;
+}
+
+[data-testid="stSidebar"] [data-testid="stSidebarNav"]::before {
+    content: "Period Buddy";
+    display: block;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pb-accent-2);
+    margin-bottom: 0.6rem;
+    opacity: 0.9;
+}
+
+/* TYPOGRAPHY  */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+    color: var(--pb-text-main);
+}
+
+p, label, span, li, input, button, textarea {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+h3, h4 {
+    font-weight: 600;
+}
+
+.stMarkdown {
+    color: var(--pb-text-main);
+}
+
+/* soft subtitles */
+small, .markdown-text-container p span {
+    color: var(--pb-text-soft);
+}
+
+/* GENERIC CARD STYLE (use via custom HTML)  */
+
+.pb-card {
+    background: var(--pb-card-bg);
+    border-radius: var(--pb-radius-xl);
+    border: 1px solid var(--pb-border-soft);
+    box-shadow: var(--pb-shadow-soft);
+    padding: 1.15rem 1.2rem;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    position: relative;
+    overflow: hidden;
+}
+
+.pb-card::before {
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background:
+      radial-gradient(circle at 0 0, rgba(255, 75, 138, 0.13), transparent 55%),
+      radial-gradient(circle at 100% 0, rgba(124, 245, 255, 0.13), transparent 55%);
+    opacity: 0.9;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+}
+
+/* small pill tag inside cards */
+.pb-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.18rem 0.75rem;
+    border-radius: var(--pb-radius-pill);
+    background: linear-gradient(120deg, rgba(255, 75, 138, 0.16), rgba(124, 245, 255, 0.12));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--pb-text-soft);
+}
+
+/*  BUTTONS */
+
+.stButton > button {
+    width: 100%;
+    border-radius: var(--pb-radius-pill);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 0.55rem 1.2rem;
+    background: radial-gradient(circle at 0 0, #ff4b8a, #ff7a9f);
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    box-shadow: 0 12px 30px rgba(255, 75, 138, 0.45);
+    transition: transform var(--pb-transition), box-shadow var(--pb-transition), filter var(--pb-transition);
+}
+
+.stButton > button:hover {
+    transform: translateY(-1px) scale(1.01);
+    filter: brightness(1.04);
+    box-shadow: 0 18px 40px rgba(255, 75, 138, 0.6);
+}
+
+.stButton > button:active {
+    transform: translateY(0) scale(0.99);
+    box-shadow: 0 10px 26px rgba(255, 75, 138, 0.4);
+}
+
+/* secondary buttons (if you add a class later) */
+.pb-btn-ghost {
+    background: transparent !important;
+    color: var(--pb-accent-2) !important;
+    border-radius: var(--pb-radius-pill) !important;
+    border: 1px solid rgba(255, 179, 209, 0.45) !important;
+    box-shadow: none !important;
+}
+
+/* INPUTS  */
+
+[data-testid="stTextInput"],
+[data-testid="stNumberInput"],
+[data-testid="stDateInput"],
+[data-testid="stSelectbox"],
+[data-testid="stSlider"] {
+    color: var(--pb-text-main);
+}
+
+/* Input containers */
+input, textarea, .stTextInput > div > div > input {
+    background: rgba(7, 8, 20, 0.9) !important;
+    border-radius: var(--pb-radius-lg) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    color: var(--pb-text-main) !important;
+    box-shadow: none !important;
+}
+
+textarea {
+    min-height: 120px;
+}
+
+/* selectbox */
+[data-testid="stSelectbox"] > div > div {
+    background: rgba(7, 8, 20, 0.9);
+    border-radius: var(--pb-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* slider */
+[data-testid="stSlider"] > div > div > div {
+    color: var(--pb-text-main);
+}
+
+[data-testid="stThumbValue"] {
+    background: var(--pb-accent-1);
+    color: #ffffff;
+}
+
+/*  ALERTS (info/success/warning)  */
+
+.stAlert {
+    border-radius: var(--pb-radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: radial-gradient(circle at 0 0, rgba(124, 245, 255, 0.14), rgba(10, 17, 30, 0.96));
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.52);
+}
+
+/*  DIVIDER  */
+
+hr {
+    border: none;
+    height: 1px;
+    margin: 0.9rem 0 1.1rem 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+}
+
+/*  METRIC / HIGHLIGHTS */
+
+[data-testid="stMetricValue"] {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--pb-accent-3);
+}
+
+[data-testid="stMetricLabel"] {
+    color: var(--pb-text-soft);
+}
+
+/* EXPANDERS  */
+
+details, [data-testid="stExpander"] {
+    border-radius: var(--pb-radius-xl) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: rgba(9, 10, 25, 0.96) !important;
+}
+
+/*  CHAT-STYLE BUBBLES (for later)  */
+
+.pb-chat-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.pb-msg-user,
+.pb-msg-bot {
+    padding: 0.6rem 0.9rem;
+    max-width: 80%;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    position: relative;
+}
+
+.pb-msg-user {
+    align-self: flex-end;
+    background: linear-gradient(135deg, #ff4b8a, #ffb3d1);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+}
+
+.pb-msg-bot {
+    align-self: flex-start;
+    background: rgba(17, 21, 40, 0.98);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-bottom-left-radius: 4px;
+    color: var(--pb-text-main);
+}
+
+/* tiny label on top of bubbles */
+.pb-chat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--pb-text-soft);
+    margin-bottom: 0.15rem;
+}
+
+/*  MOBILE TWEAKS */
+
+@media (max-width: 768px) {
+    .pb-card {
+        padding: 0.95rem 0.9rem;
+        border-radius: 18px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+    }
+}
+/*  Header branding  */
+
+.pb-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.pb-header-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.pb-app-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pb-app-version {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.pb-page-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f9f5ff;
+}

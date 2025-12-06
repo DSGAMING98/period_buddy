@@ -1,0 +1,30 @@
+{
+  "mapping": {
+    "Cramps": "cramps",
+    "Lower back pain": "back_pain",
+    "Headache": "headache",
+    "Migraine": "migraine",
+    "Nausea": "nausea",
+    "Bloating": "bloating",
+    "Breast tenderness": "breast_tenderness",
+    "Acne / breakouts": "acne",
+    "Mood swings": "mood_swings",
+    "Anxiety": "anxiety",
+    "Irritability / anger": "irritability",
+    "Sad / low mood": "low_mood",
+    "Fatigue / low energy": "fatigue",
+    "Craving sweets": "craving_sweet",
+    "Craving salty food": "craving_salty",
+    "Sleep issues": "sleep_issues",
+    "Dizziness / feeling faint": "dizzy",
+    "Very heavy bleeding": "very_heavy_flow",
+    "Clots larger than 1 rupee coin": "large_clots",
+    "Diarrhoea": "diarrhoea",
+    "Constipation": "constipation"
+  },
+  "meta": {
+    "description": "Human-facing symptom labels mapped to internal codes used by the app.",
+    "used_in": "utils/symptom_utils.py",
+    "note": "Right now the app uses a hardcoded Python dict; this file is for future config-driven behaviour or external tools."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "examples": [
+    {
+      "label": "Regular-ish 28 day cycle",
+      "period_starts": [
+        "2025-01-02",
+        "2025-01-30",
+        "2025-02-27",
+        "2025-03-27",
+        "2025-04-24"
+      ],
+      "assumed_cycle_length_days": 28,
+      "notes": "Pretty consistent ~28 day spacing. Good for testing the normal prediction flow."
+    },
+    {
+      "label": "Slightly irregular (26–32 days)",
+      "period_starts": [
+        "2025-01-05",
+        "2025-01-31",
+        "2025-02-28",
+        "2025-03-26",
+        "2025-04-21"
+      ],
+      "assumed_cycle_length_days": 29,
+      "notes": "Used to test how the app behaves when gaps are not perfectly equal."
+    },
+    {
+      "label": "Shorter cycles (~24–25 days)",
+      "period_starts": [
+        "2025-01-03",
+        "2025-01-27",
+        "2025-02-20",
+        "2025-03-16",
+        "2025-04-10"
+      ],
+      "assumed_cycle_length_days": 24,
+      "notes": "Useful for checking that the PMS / fertile windows shift correctly for shorter cycles."
+    }
+  ],
+  "meta": {
+    "description": "Sample period start dates for testing the Cycle Tracker and dashboard without using real data.",
+    "date_format": "YYYY-MM-DD",
+    "warning": "This is fake demo data and not medical anything. Just for dev/testing."
+  }
+}
